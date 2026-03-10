@@ -23,6 +23,7 @@
             background-color: var(--bg);
             color: var(--text-main);
             display: flex;
+            flex-direction: column; /* 让主体和底部署名垂直排列 */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -112,6 +113,25 @@
         .btn-decrypt:hover:not(:disabled) { background-color: var(--success-hover); }
 
         .status-main { margin-top: 1.5rem; font-size: 0.95rem; min-height: 20px; font-weight: 600; transition: color 0.2s ease; }
+
+        /* 底部署名栏样式 */
+        .footer-credit {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            font-weight: 500;
+        }
+        .footer-credit a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer-credit a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +166,10 @@
         </div>
 
         <div class="status-main" id="status-main"></div>
+    </div>
+
+    <div class="footer-credit">
+        Code with 💻 by <a href="https://github.com" target="_blank">Yewei Sun</a> | Vibe-Coding 呈现
     </div>
 
     <script>
@@ -308,11 +332,9 @@
             let failCount = 0;
             
             let zip = null;
-            // 检查网络/库加载状态，实现优雅降级
             if (isEncrypt && currentFiles.length > 1) {
                 if (typeof JSZip === 'undefined') {
                     showMainStatus("⚠️ 网络不稳定或离线，将放弃ZIP打包，为您逐一输出...", "#F59E0B");
-                    // 故意延迟 1.5 秒，让用户看清楚降级提示
                     await new Promise(r => setTimeout(r, 1500));
                 } else {
                     zip = new JSZip();
