@@ -1,10 +1,10 @@
-const CACHE_NAME = 'vibe-crypto-tool-v3';
+const CACHE_NAME = 'vibe-crypto-tool-v5'; // 👈 改个新版本号
 const urlsToCache = [
   './',
-  './index.html',
   './decrypt_tool_V2.html',
   './manifest.json',
-  './icon.svg',
+  './icon-192.png',  // 👈 换成 PNG
+  './icon-512.png',  // 👈 换成 PNG
   'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'
 ];
 
