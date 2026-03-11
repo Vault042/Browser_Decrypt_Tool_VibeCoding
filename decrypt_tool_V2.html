@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="icon.svg">
+
     <style>
         :root {
             --primary: #4F46E5;
@@ -29,17 +30,16 @@
             background-color: var(--bg);
             color: var(--text-main);
             display: flex;
-            flex-direction: column; /* 让主体和底部署名垂直排列 */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            position: relative; /* 为右上角绝对定位提供参照 */
+            position: relative;
         }
 
-        /* 👉 右上角使用说明按钮样式 */
         .help-link {
             position: absolute;
             top: 20px;
@@ -63,7 +63,6 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        /* 移动端适配 */
         @media (max-width: 600px) {
             .help-link {
                 top: 15px;
@@ -155,7 +154,6 @@
 
         .status-main { margin-top: 1.5rem; font-size: 0.95rem; min-height: 20px; font-weight: 600; transition: color 0.2s ease; }
 
-        /* 底部署名栏样式 */
         .footer-credit {
             margin-top: 1.5rem;
             font-size: 0.85rem;
